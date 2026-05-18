@@ -1,0 +1,14 @@
+# Ignore everything by default.
+*
+
+# Keep the ignore rules versioned.
+!.gitignore
+
+# Keep only the Montgomery notebooks.
+!montgomery_lung_segmentation.ipynb
+!montgomery_lung_detection.ipynb
+!montgomery_tb_classification.ipynb
+
+# Keep environment definitions.
+!environment.yml
+!requirements.txt

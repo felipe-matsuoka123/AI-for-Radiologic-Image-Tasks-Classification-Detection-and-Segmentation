@@ -1,0 +1,9 @@
+albumentations
+opencv-python-headless
+numpy
+pandas
+matplotlib
+pydicom
+scikit-image
+torch
+tqdm
