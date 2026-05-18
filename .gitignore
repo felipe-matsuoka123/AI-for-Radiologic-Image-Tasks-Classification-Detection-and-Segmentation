@@ -4,6 +4,9 @@
 # Keep the ignore rules versioned.
 !.gitignore
 
+# Keep the project README.
+!README.md
+
 # Keep only the Montgomery notebooks.
 !montgomery_lung_segmentation.ipynb
 !montgomery_lung_detection.ipynb
