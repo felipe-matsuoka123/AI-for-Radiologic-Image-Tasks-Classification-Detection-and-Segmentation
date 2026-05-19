@@ -119,6 +119,7 @@ dependencies:
       - sympy==1.14.0
       - tifffile==2026.3.3
       - torch==2.11.0+cu128
+      - torchvision==0.26.0
       - tqdm==4.67.3
       - triton==3.6.0
       - typing-inspection==0.4.2

@@ -11,6 +11,7 @@
 !montgomery_lung_segmentation.ipynb
 !montgomery_lung_detection.ipynb
 !montgomery_tb_classification.ipynb
+!tb_dataset_stats.ipynb
 
 # Keep environment definitions.
 !environment.yml
