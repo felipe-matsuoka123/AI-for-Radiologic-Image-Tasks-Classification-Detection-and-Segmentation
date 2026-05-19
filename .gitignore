@@ -7,10 +7,10 @@
 # Keep the project README.
 !README.md
 
-# Keep only the Montgomery notebooks.
-!montgomery_lung_segmentation.ipynb
-!montgomery_lung_detection.ipynb
-!montgomery_tb_classification.ipynb
+# Keep the main task notebooks.
+!segmentation.ipynb
+!detection.ipynb
+!classification.ipynb
 !tb_dataset_stats.ipynb
 
 # Keep environment definitions.
