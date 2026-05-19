@@ -7,6 +7,10 @@
 # Keep the project README.
 !README.md
 
+# Keep notebook images.
+!images/
+!images/**
+
 # Keep the main task notebooks.
 !segmentation.ipynb
 !detection.ipynb
