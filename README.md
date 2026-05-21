@@ -7,9 +7,16 @@ Educational notebooks for three common radiology AI workflows: image classificat
 
 | Task | Notebook | Open in Colab |
 | --- | --- | --- |
-| Classification | `classification.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/classification.ipynb) |
-| Detection | `detection.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/detection.ipynb) |
-| Segmentation | `segmentation.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/segmentation.ipynb) |
+| Classification | `notebooks/classification.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/classification.ipynb) |
+| Detection | `notebooks/detection.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/detection.ipynb) |
+| Segmentation | `notebooks/segmentation.ipynb` | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/segmentation.ipynb) |
+
+## Environment
+
+Environment files are stored in `environment/`:
+
+- `environment/requirements.txt` for pip installs
+- `environment/environment.yml` for the Conda environment used while developing the notebooks
 
 ## Datasets
 

@@ -12,10 +12,12 @@
 !images/**
 
 # Keep the main task notebooks.
-!segmentation.ipynb
-!detection.ipynb
-!classification.ipynb
+!notebooks/
+!notebooks/segmentation.ipynb
+!notebooks/detection.ipynb
+!notebooks/classification.ipynb
 
 # Keep environment definitions.
-!environment.yml
-!requirements.txt
+!environment/
+!environment/environment.yml
+!environment/requirements.txt
