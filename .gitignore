@@ -15,7 +15,6 @@
 !segmentation.ipynb
 !detection.ipynb
 !classification.ipynb
-!tb_dataset_stats.ipynb
 
 # Keep environment definitions.
 !environment.yml

@@ -75,13 +75,6 @@ For the detection and segmentation notebooks, only the Montgomery path is needed
 DATASET_DIR = Path("datasets/NLM-MontgomeryCXRSet/MontgomerySet")
 ```
 
-For the dataset statistics notebook, use:
-
-```python
-SHENZHEN_DIR = Path("datasets/ChinaSet_AllFiles")
-MONTGOMERY_DIR = Path("datasets/NLM-MontgomeryCXRSet/MontgomerySet")
-```
-
 If you store the datasets somewhere else, keep the same final folder names and replace only the parent path. For example:
 
 ```python
