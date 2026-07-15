@@ -7,12 +7,15 @@ They are educational workflows, not clinical decision-support systems or deploym
 
 ## Notebooks
 
-| Manuscript task | Notebook | What it demonstrates | Open in Colab |
-| --- | --- | --- |
-| Classification | `notebooks/classification.ipynb` | Train on Shenzhen TB labels; compare a held-out Shenzhen test set with the independent Montgomery cohort. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/classification.ipynb) |
-| Detection | `notebooks/detection_yolo.ipynb` | Convert Montgomery left- and right-lung masks to boxes, then fine-tune a pretrained YOLO detector for the single `lung` class. This is the detection workflow described in the manuscript. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/detection_yolo.ipynb) |
-| Segmentation | `notebooks/segmentation.ipynb` | Combine the Montgomery lung masks and train a U-Net-style model to predict a binary lung mask. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/segmentation.ipynb) |
-| Supplemental detection exercise | `notebooks/detection.ipynb` | A fixed two-box ResNet-34 coordinate-regression exercise. It is retained as an introductory alternative and is not the YOLO workflow reported in the manuscript. | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/detection.ipynb) |
+| Task | Notebook | Open in Colab |
+| :--- | :--- | :---: |
+| Classification | [`classification.ipynb`](notebooks/classification.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/classification.ipynb) |
+| Detection | [`detection_yolo.ipynb`](notebooks/detection_yolo.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/detection_yolo.ipynb) |
+| Segmentation | [`segmentation.ipynb`](notebooks/segmentation.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/segmentation.ipynb) |
+
+- **Classification:** train on Shenzhen TB labels and compare the held-out Shenzhen test set with the independent Montgomery cohort.
+- **Detection:** convert Montgomery left- and right-lung masks to boxes, then fine-tune a pretrained YOLO detector for the single `lung` class.
+- **Segmentation:** combine the Montgomery lung masks and train a U-Net-style model to predict a binary lung mask.
 
 The detection and segmentation targets are lung anatomy, not tuberculosis lesions. The Montgomery TB label is retained as metadata for stratified splits; it is not the target for these two workflows.
 
