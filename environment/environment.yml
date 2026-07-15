@@ -117,9 +117,11 @@ dependencies:
       - simsimd==6.5.16
       - stringzilla==4.6.1
       - sympy==1.14.0
+      - timm==1.0.27
       - tifffile==2026.3.3
       - torch==2.11.0+cu128
       - torchvision==0.26.0
       - tqdm==4.67.3
+      - ultralytics==8.4.71
       - triton==3.6.0
       - typing-inspection==0.4.2

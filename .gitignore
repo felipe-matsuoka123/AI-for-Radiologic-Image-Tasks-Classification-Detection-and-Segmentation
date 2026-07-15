@@ -11,10 +11,15 @@
 !images/
 !images/**
 
+# Keep utility scripts.
+!scripts/
+!scripts/*.py
+
 # Keep the main task notebooks.
 !notebooks/
 !notebooks/segmentation.ipynb
 !notebooks/detection.ipynb
+!notebooks/detection_yolo.ipynb
 !notebooks/classification.ipynb
 
 # Keep environment definitions.
