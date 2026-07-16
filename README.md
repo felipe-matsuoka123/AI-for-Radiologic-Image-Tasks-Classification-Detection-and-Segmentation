@@ -12,6 +12,7 @@ They are educational workflows, not clinical decision-support systems or deploym
 | Classification | [`classification.ipynb`](notebooks/classification.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/classification.ipynb) |
 | Detection | [`detection_yolo.ipynb`](notebooks/detection_yolo.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/detection_yolo.ipynb) |
 | Segmentation | [`segmentation.ipynb`](notebooks/segmentation.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/segmentation.ipynb) |
+| Dataset exploration | [`tb_dataset_stats.ipynb`](tb_dataset_stats.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/tb_dataset_stats.ipynb) |
 
 - **Classification:** train on Shenzhen TB labels and compare the held-out Shenzhen test set with the independent Montgomery cohort.
 - **Detection:** convert Montgomery left- and right-lung masks to boxes, then fine-tune a pretrained YOLO detector for the single `lung` class.
@@ -28,7 +29,7 @@ Environment files are stored in `environment/`:
 
 ## Datasets
 
-The notebooks use the two public chest-radiograph collections from the U.S. National Library of Medicine described in the manuscript. Dataset files are not stored in this repository; download them once and point the notebooks to the extracted folders.
+The notebooks use two public chest-radiograph collections from the U.S. National Library of Medicine. In Google Colab, each notebook downloads and extracts the dataset(s) it needs automatically—open a notebook, select a GPU runtime, and use **Runtime → Run all**. No manual downloads, uploads, or path changes are needed. The first run downloads roughly 4.4 GB for classification (or the 0.6 GB Montgomery archive for detection and segmentation), so leave the setup cell running until it reports that extraction has started.
 
 **Montgomery CXR dataset**  
 Contains 138 posterior-anterior chest radiographs (80 normal and 58 with TB findings), image-level TB labels, and radiologist-supervised left- and right-lung masks. It supplies the anatomy annotations for segmentation and detection, and serves as the external cohort for classification.
@@ -42,9 +43,11 @@ Contains 662 frontal chest radiographs (326 normal and 336 with TB findings) wit
 - Dataset: https://openi.nlm.nih.gov/imgs/collections/ChinaSet_AllFiles.zip
 - Paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/
 
-### Download And Folder Setup
+### Running Outside Colab
 
-Create one parent folder for the datasets, download both ZIP files there, and unzip them:
+The same setup cell also works in a local Jupyter environment: it downloads data into `datasets/` beneath the directory from which the notebook is run. To use an existing local copy instead, change the dataset variables in that setup cell after it has run.
+
+If you prefer a manual download, create one parent folder for the datasets and unzip the two archives there:
 
 ```bash
 mkdir -p datasets
@@ -73,9 +76,9 @@ datasets/
             +-- rightMask/
 ```
 
-### Notebook Paths
+### Existing Local Paths
 
-Each notebook has a setup cell near the top where you paste the dataset path for your machine.
+The default automatic setup needs no changes. The following paths are only useful if you deliberately want to reuse an existing local dataset copy.
 
 If you downloaded the data into this repository under `datasets/`, use:
 
@@ -99,4 +102,4 @@ MONTGOMERY_DATASET_DIR = Path("/your/path/to/NLM-MontgomeryCXRSet/MontgomerySet"
 
 ## Notes
 
-When running in Colab, download the ZIP files into the Colab runtime or mount Google Drive, then update the same path variables before executing the workflow.
+Colab storage is temporary. Downloaded data and trained model files are available for the current session and are removed when that runtime is reset unless you explicitly save them elsewhere.

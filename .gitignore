@@ -14,6 +14,8 @@
 # Keep utility scripts.
 !scripts/
 !scripts/*.py
+# Local maintenance helper; end users never need to run it.
+scripts/make_colab_ready.py
 
 # Keep the main task notebooks.
 !notebooks/
@@ -21,6 +23,9 @@
 !notebooks/detection.ipynb
 !notebooks/detection_yolo.ipynb
 !notebooks/classification.ipynb
+
+# Keep the optional dataset-exploration notebook too.
+!tb_dataset_stats.ipynb
 
 # Keep environment definitions.
 !environment/
