@@ -28,75 +28,37 @@ Environment files are stored in `environment/`:
 
 ## Datasets
 
-The notebooks use two public chest-radiograph collections from the U.S. National Library of Medicine. In Google Colab, each notebook downloads and extracts the dataset(s) it needs automatically—open a notebook, select a GPU runtime, and use **Runtime → Run all**. No manual downloads, uploads, or path changes are needed. The first run downloads roughly 4.4 GB for classification (or the 0.6 GB Montgomery archive for detection and segmentation), so leave the setup cell running until it reports that extraction has started.
+The notebooks use two public chest-radiograph collections from the U.S. National Library of Medicine. A Colab-ready copy is publicly hosted on [Hugging Face](https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr). In Google Colab, open a notebook, select a GPU runtime, and use **Runtime → Run all**—no manual downloads, uploads, accounts, or path changes are needed. The first run downloads only the folders required for that workflow.
 
 **Montgomery CXR dataset**  
 Contains 138 posterior-anterior chest radiographs (80 normal and 58 with TB findings), image-level TB labels, and radiologist-supervised left- and right-lung masks. It supplies the anatomy annotations for segmentation and detection, and serves as the external cohort for classification.
 
-- Dataset: https://openi.nlm.nih.gov/imgs/collections/NLM-MontgomeryCXRSet.zip
+- Colab-ready public copy: https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr/tree/main/MontgomerySet
+- Original NLM source: https://openi.nlm.nih.gov/imgs/collections/NLM-MontgomeryCXRSet.zip
 - Paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/
 
 **Shenzhen CXR dataset**  
 Contains 662 frontal chest radiographs (326 normal and 336 with TB findings) with image-level TB labels. It is used for classification training, validation, and held-out same-source testing.
 
-- Dataset: https://openi.nlm.nih.gov/imgs/collections/ChinaSet_AllFiles.zip
+- Colab-ready public copy: https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr/tree/main/ChinaSet_AllFiles
+- Original NLM source: https://openi.nlm.nih.gov/imgs/collections/ChinaSet_AllFiles.zip
 - Paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/
 
 ### Running Outside Colab
 
-The same setup cell also works in a local Jupyter environment: it downloads data into `datasets/` beneath the directory from which the notebook is run. To use an existing local copy instead, change the dataset variables in that setup cell after it has run.
-
-If you prefer a manual download, create one parent folder for the datasets and unzip the two archives there:
-
-```bash
-mkdir -p datasets
-cd datasets
-
-curl -LO https://openi.nlm.nih.gov/imgs/collections/ChinaSet_AllFiles.zip
-curl -LO https://openi.nlm.nih.gov/imgs/collections/NLM-MontgomeryCXRSet.zip
-
-unzip ChinaSet_AllFiles.zip
-unzip NLM-MontgomeryCXRSet.zip
-```
-
-After extraction, the folders should look like this:
+The same setup cell works in local Jupyter: it downloads public files into `datasets/` beneath the directory from which the notebook runs. The folder layout is:
 
 ```text
 datasets/
 +-- ChinaSet_AllFiles/
 |   +-- CXR_png/
 |   +-- ClinicalReadings/
-+-- NLM-MontgomeryCXRSet/
-    +-- MontgomerySet/
-        +-- CXR_png/
-        +-- ClinicalReadings/
-        +-- ManualMask/
-            +-- leftMask/
-            +-- rightMask/
-```
-
-### Existing Local Paths
-
-The default automatic setup needs no changes. The following paths are only useful if you deliberately want to reuse an existing local dataset copy.
-
-If you downloaded the data into this repository under `datasets/`, use:
-
-```python
-SHENZHEN_DATASET_DIR = Path("datasets/ChinaSet_AllFiles")
-MONTGOMERY_DATASET_DIR = Path("datasets/NLM-MontgomeryCXRSet/MontgomerySet")
-```
-
-For the detection and segmentation notebooks, only the Montgomery path is needed:
-
-```python
-DATASET_DIR = Path("datasets/NLM-MontgomeryCXRSet/MontgomerySet")
-```
-
-If you store the datasets somewhere else, keep the same final folder names and replace only the parent path. For example:
-
-```python
-SHENZHEN_DATASET_DIR = Path("/your/path/to/ChinaSet_AllFiles")
-MONTGOMERY_DATASET_DIR = Path("/your/path/to/NLM-MontgomeryCXRSet/MontgomerySet")
++-- MontgomerySet/
+    +-- CXR_png/
+    +-- ClinicalReadings/
+    +-- ManualMask/
+        +-- leftMask/
+        +-- rightMask/
 ```
 
 ## Notes
