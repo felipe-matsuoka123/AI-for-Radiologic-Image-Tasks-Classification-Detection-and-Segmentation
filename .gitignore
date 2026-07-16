@@ -24,8 +24,6 @@ scripts/make_colab_ready.py
 !notebooks/detection_yolo.ipynb
 !notebooks/classification.ipynb
 
-# Keep the optional dataset-exploration notebook too.
-!tb_dataset_stats.ipynb
 
 # Keep environment definitions.
 !environment/
