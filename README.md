@@ -28,12 +28,13 @@ Environment files are stored in `environment/`:
 
 ## Datasets
 
-The notebooks use two public chest-radiograph collections from the U.S. National Library of Medicine. A Colab-ready copy is publicly hosted on [Hugging Face](https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr). In Google Colab, open a notebook, select a GPU runtime, and use **Runtime → Run all**—no manual downloads, uploads, accounts, or path changes are needed. The first run downloads only the folders required for that workflow.
+The notebooks use two public chest-radiograph collections from the U.S. National Library of Medicine. Colab-ready ZIP archives are publicly hosted on [Hugging Face](https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr). In Google Colab, open a notebook, select a GPU runtime, and use **Runtime → Run all**—no manual downloads, uploads, accounts, or path changes are needed. The first run downloads only the archive required for that workflow.
 
 **Montgomery CXR dataset**  
 Contains 138 posterior-anterior chest radiographs (80 normal and 58 with TB findings), image-level TB labels, and radiologist-supervised left- and right-lung masks. It supplies the anatomy annotations for segmentation and detection, and serves as the external cohort for classification.
 
 - Colab-ready public copy: https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr/tree/main/MontgomerySet
+- Direct archive: https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr/resolve/main/MontgomerySet.zip?download=true
 - Original NLM source: https://openi.nlm.nih.gov/imgs/collections/NLM-MontgomeryCXRSet.zip
 - Paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/
 
@@ -41,6 +42,7 @@ Contains 138 posterior-anterior chest radiographs (80 normal and 58 with TB find
 Contains 662 frontal chest radiographs (326 normal and 336 with TB findings) with image-level TB labels. It is used for classification training, validation, and held-out same-source testing.
 
 - Colab-ready public copy: https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr/tree/main/ChinaSet_AllFiles
+- Direct archive: https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr/resolve/main/ChinaSet_AllFiles.zip?download=true
 - Original NLM source: https://openi.nlm.nih.gov/imgs/collections/ChinaSet_AllFiles.zip
 - Paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/
 
