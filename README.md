@@ -9,9 +9,9 @@ They are educational workflows, not clinical decision-support systems or deploym
 
 | Task | Notebook | Open in Colab |
 | :--- | :--- | :---: |
-| Classification | [`classification.ipynb`](notebooks/classification.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/classification.ipynb) |
-| Detection | [`detection_yolo.ipynb`](notebooks/detection_yolo.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/detection_yolo.ipynb) |
-| Segmentation | [`segmentation.ipynb`](notebooks/segmentation.ipynb) | [Open in Colab](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/segmentation.ipynb) |
+| Classification | [`classification.ipynb`](notebooks/classification.ipynb) | [![Open classification in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/classification.ipynb) |
+| Detection | [`detection_yolo.ipynb`](notebooks/detection_yolo.ipynb) | [![Open detection in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/detection_yolo.ipynb) |
+| Segmentation | [`segmentation.ipynb`](notebooks/segmentation.ipynb) | [![Open segmentation in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/felipe-matsuoka123/AI-for-Radiologic-Image-Tasks-Classification-Detection-and-Segmentation/blob/main/notebooks/segmentation.ipynb) |
 
 - **Classification:** train on Shenzhen TB labels and compare the held-out Shenzhen test set with the independent Montgomery cohort.
 - **Detection:** convert Montgomery left- and right-lung masks to boxes, then fine-tune a pretrained YOLO detector for the single `lung` class.
