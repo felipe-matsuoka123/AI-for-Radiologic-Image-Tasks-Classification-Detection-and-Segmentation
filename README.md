@@ -85,23 +85,6 @@ Contains 662 frontal chest radiographs (326 normal and 336 with TB findings) wit
 - Original NLM source: https://openi.nlm.nih.gov/imgs/collections/ChinaSet_AllFiles.zip
 - Paper: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4256233/
 
-### Running Outside Colab
-
-The same setup cell works in local Jupyter: it downloads public files into `datasets/` beneath the directory from which the notebook runs. The folder layout is:
-
-```text
-datasets/
-+-- ChinaSet_AllFiles/
-|   +-- CXR_png/
-|   +-- ClinicalReadings/
-+-- MontgomerySet/
-    +-- CXR_png/
-    +-- ClinicalReadings/
-    +-- ManualMask/
-        +-- leftMask/
-        +-- rightMask/
-```
-
 ## Glossary
 
 **Annotation:** Information attached to an image that provides the correct answer during supervised learning. It may be an image-level label, a bounding box, or a pixel mask.
@@ -144,9 +127,6 @@ datasets/
 
 Confirm that Colab shows a GPU under **Runtime → Change runtime type**. The setup output should report a CUDA device. CPU execution is supported but model training may take substantially longer.
 
-### The runtime runs out of memory
-
-Reduce `BATCH_SIZE` first. If necessary, also reduce `IMAGE_SIZE` or use a smaller model preset. Restart the runtime after an out-of-memory error because GPU memory may remain occupied.
 
 ### A dataset or pretrained model fails to download
 
@@ -160,30 +140,6 @@ Run the two setup cells in order. If Colab reports that a newly installed packag
 
 Start Jupyter from the repository root, or confirm that the automatically downloaded `datasets/` directory is beneath the notebook's current working directory. Avoid moving individual notebooks away from the project unless you also update the data path.
 
-### A data-loading cell appears frozen
-
-Set `NUM_WORKERS = 0` in the relevant control panel. This is slower but avoids multiprocessing issues in some local Jupyter environments.
-
 ### Results differ between runs
 
 The notebooks set random seeds, but GPU operations and library versions can still introduce small differences. Focus on the overall pattern rather than expecting every decimal value or sampled image to be identical.
-
-### Training stopped when the Colab runtime disconnected
-
-Colab storage is temporary. A disconnected or reset runtime loses the trained model held in memory. Rerun the notebook or explicitly save important models and result files to persistent storage before ending the session.
-
-### Training metrics improve but validation metrics worsen
-
-This pattern can indicate overfitting. Use the validation-selected model state rather than the final epoch, and consider fewer epochs, stronger augmentation, or a smaller model. Do not use the test set to choose these settings.
-
-### Detection produces no boxes or too many boxes
-
-Inspect the confidence threshold. Lowering it keeps more predictions and may recover missed lungs; raising it removes low-confidence boxes. Changing this threshold affects the displayed predictions but does not retrain the detector.
-
-### A metric looks high but a prediction looks wrong
-
-Summary metrics average across cases and can hide important failure modes. Always inspect the qualitative examples. These small educational datasets are not sufficient to establish clinical performance.
-
-## Notes
-
-Colab storage is temporary. Downloaded data and trained model files are available for the current session and are removed when that runtime is reset unless you explicitly save them elsewhere.
