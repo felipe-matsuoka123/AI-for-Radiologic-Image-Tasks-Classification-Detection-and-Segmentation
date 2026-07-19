@@ -30,11 +30,11 @@ No programming experience is required to follow the main workflow. Each notebook
 
 The notebooks use the following visual cues:
 
-- **🔒 Setup or implementation:** run the collapsed cell without editing it. You may expand it if you want to study the code.
+- **Setup cells:** the first two code cells are collapsed and can be run without editing.
+- **Visible code:** the remaining implementation stays open so readers can follow how each stage works.
 - **✏️ Control panel:** safe settings for beginner experiments. Changing image size, batch size, or epoch count can alter memory use and runtime.
 - **👀 How to read this result:** a plain-language guide to the table, figure, or numbers produced by the preceding cell.
 - **🧪 Try it yourself:** an optional experiment and the effect you should expect.
-- **⚠️ Watch for:** a common mistake or limitation.
 
 ## The Three Tasks at a Glance
 
@@ -110,7 +110,7 @@ datasets/
 
 **Batch:** A small group of images processed together during one model update. A larger batch can use more GPU memory.
 
-**Checkpoint:** A saved copy of the model from a particular stage of training. These notebooks retain the checkpoint that performs best on validation data.
+**Checkpoint:** A saved copy of the model from a particular stage of training. The notebooks use the best validation model state directly from memory for test evaluation, so saving and reloading a checkpoint is not required for the workflow.
 
 **Confidence score:** The detector's estimate of how strongly a predicted box contains the target class. It is not the same as a clinically calibrated probability.
 
@@ -170,11 +170,11 @@ The notebooks set random seeds, but GPU operations and library versions can stil
 
 ### Training stopped when the Colab runtime disconnected
 
-Colab storage is temporary. A disconnected or reset runtime may lose downloaded data and saved checkpoints. Rerun the notebook or copy important result files to persistent storage before ending the session.
+Colab storage is temporary. A disconnected or reset runtime loses the trained model held in memory. Rerun the notebook or explicitly save important models and result files to persistent storage before ending the session.
 
 ### Training metrics improve but validation metrics worsen
 
-This pattern can indicate overfitting. Use the validation-selected checkpoint rather than the final epoch, and consider fewer epochs, stronger augmentation, or a smaller model. Do not use the test set to choose these settings.
+This pattern can indicate overfitting. Use the validation-selected model state rather than the final epoch, and consider fewer epochs, stronger augmentation, or a smaller model. Do not use the test set to choose these settings.
 
 ### Detection produces no boxes or too many boxes
 
