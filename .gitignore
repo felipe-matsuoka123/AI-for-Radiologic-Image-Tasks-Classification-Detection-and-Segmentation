@@ -11,12 +11,6 @@
 !images/
 !images/**
 
-# Keep utility scripts.
-!scripts/
-!scripts/*.py
-# Local maintenance helper; end users never need to run it.
-scripts/make_colab_ready.py
-
 # Keep the main task notebooks.
 !notebooks/
 !notebooks/segmentation.ipynb
