@@ -67,7 +67,7 @@ Environment files are stored in `environment/`:
 
 ## Datasets
 
-The notebooks use two public chest-radiograph collections from the U.S. National Library of Medicine. Colab-ready ZIP archives are publicly hosted on [Hugging Face](https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr). In Google Colab, open a notebook, select a GPU runtime, and use **Runtime → Run all**—no manual downloads, uploads, accounts, or path changes are needed. The first run downloads only the archive required for that workflow.
+The notebooks use two public chest-radiograph collections from the U.S. National Library of Medicine. They load the data with Hugging Face `datasets` from [Famatsu123/montgomery-shenzhen-tuberculosis-cxr](https://huggingface.co/datasets/Famatsu123/montgomery-shenzhen-tuberculosis-cxr). The archive names are mapped to explicit dataset splits so radiographs and lung masks cannot be mixed accidentally. In Google Colab, select a GPU runtime and use **Runtime → Run all**—no manual downloads, uploads, accounts, extraction, or path changes are needed. Later runs reuse the Hugging Face cache.
 
 **Montgomery CXR dataset**  
 Contains 138 posterior-anterior chest radiographs (80 normal and 58 with TB findings), image-level TB labels, and radiologist-supervised left- and right-lung masks. It supplies the anatomy annotations for segmentation and detection, and serves as the external cohort for classification.
@@ -136,9 +136,9 @@ Check the runtime's internet connection and rerun the failed cell. Temporary err
 
 Run the two setup cells in order. If Colab reports that a newly installed package requires a restart, select **Runtime → Restart session**, then use **Run all** again.
 
-### A file or directory is not found outside Colab
+### The Hugging Face cache cannot be written outside Colab
 
-Start Jupyter from the repository root, or confirm that the automatically downloaded `datasets/` directory is beneath the notebook's current working directory. Avoid moving individual notebooks away from the project unless you also update the data path.
+Start Jupyter with a user account that can write to its cache directory, or set `HF_HOME` to a writable location before launching Jupyter. The notebooks no longer depend on a repository-local `datasets/` directory.
 
 ### Results differ between runs
 
